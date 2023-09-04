@@ -296,4 +296,31 @@ Eğer tüm veriler uygun şekilde gönderildiyse yanıt olarak aşağıdaki yan�
   }
 }
 ```
+## Şifremi unuttum
+Email bilgisinin veritabanında olup olmadığını kontrol ettikten sonra şifreyi mail atan api.
+
+```http
+  POST /dashboard/main/adminphp/api.php
+```
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `function`      | `json` | **Gerekli**.  "forgot_password" |
+| `key`      | `json` | **Gerekli**.  Secret Key |
+| `email`      | `json` | **Gerekli**.  Email bilgisi |
+
+
+
+Eğer tüm veriler uygun şekilde gönderildiyse yanıt olarak aşağıdaki yanıt gelir. 
+```
+{
+  "success": true,
+  "message": "1 eşleşme bulundu",
+  "status": "Email başariyla gönderildi",
+  "data": {
+    "user_name": "testset",
+    "user_id": "user_64ez9da9caa0fc",
+    "password": "123241234"
+  }
+}
+```
 

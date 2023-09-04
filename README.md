@@ -271,5 +271,29 @@ Eğer tüm veriler uygun şekilde gönderildiyse yanıt olarak aşağıdaki yan�
   "reported_user": "user_64ez9da9caa0fc"
 }
 ```
+## Login
+Email ve şifre bilgisinin veritabanında olup olmadığını kontrol etme apisi.
 
+```http
+  POST /dashboard/main/adminphp/api.php
+```
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `function`      | `json` | **Gerekli**.  "login" |
+| `key`      | `json` | **Gerekli**.  Secret Key |
+| `email`      | `json` | **Gerekli**.  Email bilgisi |
+| `password`      | `json` | **Gerekli**.  Password bilgisi|
+
+
+Eğer tüm veriler uygun şekilde gönderildiyse yanıt olarak aşağıdaki yanıt gelir. 
+```
+{
+  "success": true,
+  "message": "1 eşleşme bulundu",
+  "data": {
+    "user_name": "testset",
+    "user_id": "user_64ez9da9caa0fc"
+  }
+}
+```
 
